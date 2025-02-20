@@ -1,19 +1,36 @@
-
-
+"use client"
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const {push} = useRouter()
   return (
     <div className=' h-screen'>
-        <header>
-          
-          {/* <div class="absolute bottom-0 left-0 w-full">
-                    <svg viewBox="0 0 1440 320" class="w-full text-white">
-                        <path fill="currentColor"
-                            d="M0,288L48,272C96,256,192,224,288,224C384,224,480,256,576,245.3C672,235,768,181,864,170.7C960,160,1056,192,1152,218.7C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                        </path>
-                    </svg>
-                </div> */}
-        </header>
+        <header className="relative h-screen bg-black text-white flex items-center justify-center overflow-hidden">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gray-500"></div>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 text-center max-w-2xl px-6"
+      >
+        <h1 className="text-4xl md:text-5xl font-bold">Zoom through the city with <span className="text-yellow-400 ">KODAI GANESH CALL TAXI!</span></h1>
+        <p className="mt-4 text-lg md:text-xl text-gray-300">
+          Fast, reliable, and just a call away – because your journey deserves the best!
+        </p>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="mt-6 bg-yellow-400 text-black px-6 py-3 rounded-full font-bold text-lg shadow-lg"
+          onClick={()=>push('/pages/book_a_ride')}
+        >
+          Book a Ride
+        </motion.button>
+      </motion.div>
+    </header>
+        
+        <div className="h-screen bg-red-700"></div>
     </div>
   );
 }

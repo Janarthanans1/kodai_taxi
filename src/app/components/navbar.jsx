@@ -18,7 +18,7 @@ const Navbar = () => {
   const path = usePathname()
   return (
     <>
-      <nav className='fixed w-full bg-color_1 shadow-xl flex items-center justify-between  font-semibold px-5 py-5 md:px-10 lg:px-20'>
+      <nav className='fixed w-full z-20 bg-color_1 shadow-xl flex items-center justify-between  font-semibold px-5 py-5 md:px-10 lg:px-20'>
         {/*logo*/}
         <div className='min-w-fit px-5 font-bold text-lg sm:text-xl md:text-2xl'>
           <p className='tracking-widest '><span className='text-color_3'>KG</span> Taxi</p>
@@ -70,7 +70,7 @@ const Navbar = () => {
         </div>
       </nav>
         {/*mobile menubar*/}
-        <MobileMenu open={menuOpen} auth={authUser} path={path}/>
+        <MobileMenu open={menuOpen} setMenuOpen={setMenuOpen} auth={authUser} path={path}/>
     </> 
   );
 }
