@@ -20,7 +20,7 @@ const MobileMenu = ({open,auth,path}) => {
                     transition={{duration:0.3}}
                     className='absolute top-20 left-0 w-full h-screen z-20'
                 >
-                    <div className='text-lg font-semibold bg-color_1 px-7 py-7 rounded-2xl shadow-lg'>
+                    <div className='md:hidden text-lg font-semibold bg-color_1 px-7 py-7 rounded-2xl shadow-lg'>
                         <ul className='flex flex-col  justify-center items-start gap-4' >
                             <li className={`${path === "/" ? "bg-color_3 text-color_1 w-full pr-5 py-2 rounded-lg  " : ""} relative flex items-center gap-2  group`}>
                                 <RiHome9Fill/>
