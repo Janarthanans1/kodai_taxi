@@ -1,6 +1,8 @@
 "use client"
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Navbar from "./components/navbar";
+import BookingBtn from "./components/bookingbtn.jsx"
 
 export default function Home() {
   const {push} = useRouter()
@@ -27,6 +29,10 @@ export default function Home() {
         >
           Book a Ride
         </motion.button>
+        <div>
+          <BookingBtn/>
+
+        </div>
       </motion.div>
     </header>
         
